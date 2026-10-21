@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alvin John Dulnuan — Software Engineer | Full-Stack Developer | System Administrator | BSIT Student from Aritao, Nueva Vizcaya">
+    <meta name="keywords" content="Alvin John Dulnuan, Software Engineer, Full-Stack Developer, BSIT, Portfolio, Web Developer, Philippines">
+    <meta name="author" content="Alvin John Dulnuan">
+    <meta property="og:title" content="Alvin John Dulnuan — Software Engineer Portfolio">
+    <meta property="og:description" content="Building the future, one line of code at a time.">
+    <meta property="og:type" content="website">
+    <title>Alvin John Dulnuan — Software Engineer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== AURORA BOREALIS CANVAS ==================== -->
+    <canvas id="auroraCanvas" class="aurora-canvas"></canvas>
+
+    <!-- ==================== PARTICLE DOTS CANVAS (ALL PAGES) ==================== -->
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
+
+    <!-- ==================== CUSTOM CURSOR ==================== -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- ==================== SCROLL PROGRESS BAR ==================== -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ==================== PRELOADER ==================== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <span class="logo-bracket">&lt;</span>ALVEIN<span class="logo-bracket"> /&gt;</span>
+            </div>
+            <div class="preloader-bar">
+                <div class="preloader-fill"></div>
+            </div>
+            <span class="preloader-count">0</span>
+        </div>
+    </div>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-logo magnetic-btn">
+                <span class="logo-bracket">&lt;</span>ALVEIN<span class="logo-bracket"> /&gt;</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active" data-text="Home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+                <li><a href="#services" class="nav-link" data-text="Services">Services</a></li>
+                <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+                <li><a href="#testimonials" class="nav-link" data-text="Reviews">Reviews</a></li>
+                <li><a href="#education" class="nav-link" data-text="Education">Education</a></li>
+                <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="#contact" class="btn btn-nav magnetic-btn">Let's Talk</a>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="hero">
+        <div class="grid-bg"></div>
+        <div class="noise-overlay"></div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+            <div class="shape shape-6"></div>
+        </div>
+
+        <div class="container hero-content">
+            <div class="hero-left">
+                <div class="hero-badge animate-on-scroll">
+                    <span class="badge-dot"></span>
+                    <span>Available for work</span>
+                </div>
+                <p class="hero-greeting animate-on-scroll">Hello, I'm</p>
+                <h1 class="hero-title animate-on-scroll">
+                    <span class="glitch-text" data-text="Alvin John">Alvin John</span>
+                    <br>
+                    <span class="gradient-text hero-title-last">Dulnuan</span>
+                </h1>
+                <div class="hero-subtitle animate-on-scroll">
+                    <span class="subtitle-arrow">▹</span>
+                    <span class="typing-text" id="typingText"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description animate-on-scroll">
+                    A passionate BSIT student from <strong>Aritao, Nueva Vizcaya</strong> with an obsessive drive 
+                    to architect scalable systems and craft pixel-perfect interfaces. I don't just write code — 
+                    I engineer experiences.
+                </p>
+                <div class="hero-buttons animate-on-scroll">
+                    <a href="#projects" class="btn btn-primary magnetic-btn">
+                        <span class="btn-text"><i class="fas fa-rocket"></i> View My Work</span>
+                        <span class="btn-glow"></span>
+                    </a>
+                    <a href="mailto:ajdulnuan09@gmail.com" class="btn btn-outline magnetic-btn">
+                        <span class="btn-text"><i class="fas fa-paper-plane"></i> Hire Me</span>
+                    </a>
+                    <a href="#" class="btn btn-ghost magnetic-btn" download>
+                        <span class="btn-text"><i class="fas fa-download"></i> Resume</span>
+                    </a>
+                </div>
+                <div class="hero-social animate-on-scroll">
+                    <a href="https://github.com/" target="_blank" class="social-link magnetic-btn" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/" target="_blank" class="social-link magnetic-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://facebook.com/" target="_blank" class="social-link magnetic-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="mailto:ajdulnuan09@gmail.com" class="social-link magnetic-btn" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-right animate-on-scroll">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-ring"></div>
+                    <div class="hero-image-ring ring-2"></div>
+                    <img src="images/alvin_portrait.jpeg" alt="Alvin John Dulnuan" class="hero-image">
+                    <div class="hero-image-badge badge-1 glass-card">
+                        <i class="fas fa-code"></i>
+                        <span>500+ hrs coded</span>
+                    </div>
+                    <div class="hero-image-badge badge-2 glass-card">
+                        <i class="fas fa-trophy"></i>
+                        <span>10+ Projects</span>
+                    </div>
+                    <div class="hero-image-badge badge-3 glass-card">
+                        <i class="fas fa-star"></i>
+                        <span>Top Performer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <a href="#marquee">
+                <div class="mouse"><div class="wheel"></div></div>
+                <span>Scroll to explore</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ==================== MARQUEE / TECH TICKER ==================== -->
+    <section class="marquee-section" id="marquee">
+        <div class="marquee">
+            <div class="marquee-track">
+                <div class="marquee-item"><i class="fab fa-html5"></i> HTML5</div>
+                <div class="marquee-item"><i class="fab fa-css3-alt"></i> CSS3</div>
+                <div class="marquee-item"><i class="fab fa-js-square"></i> JavaScript</div>
+                <div class="marquee-item"><i class="fab fa-react"></i> React</div>
+                <div class="marquee-item"><i class="fab fa-node-js"></i> Node.js</div>
+                <div class="marquee-item"><i class="fab fa-python"></i> Python</div>
+                <div class="marquee-item"><i class="fab fa-java"></i> Java</div>
+                <div class="marquee-item"><i class="fab fa-php"></i> PHP</div>
+                <div class="marquee-item"><i class="fab fa-laravel"></i> Laravel</div>
+                <div class="marquee-item"><i class="fab fa-git-alt"></i> Git</div>
+                <div class="marquee-item"><i class="fas fa-database"></i> MySQL</div>
+                <div class="marquee-item"><i class="fab fa-linux"></i> Linux</div>
+                <div class="marquee-item"><i class="fab fa-figma"></i> Figma</div>
+                <div class="marquee-item"><i class="fab fa-docker"></i> Docker</div>
+                <div class="marquee-item"><i class="fab fa-aws"></i> AWS</div>
+                <div class="marquee-item"><i class="fas fa-fire"></i> Firebase</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="marquee-item"><i class="fab fa-html5"></i> HTML5</div>
+                <div class="marquee-item"><i class="fab fa-css3-alt"></i> CSS3</div>
+                <div class="marquee-item"><i class="fab fa-js-square"></i> JavaScript</div>
+                <div class="marquee-item"><i class="fab fa-react"></i> React</div>
+                <div class="marquee-item"><i class="fab fa-node-js"></i> Node.js</div>
+                <div class="marquee-item"><i class="fab fa-python"></i> Python</div>
+                <div class="marquee-item"><i class="fab fa-java"></i> Java</div>
+                <div class="marquee-item"><i class="fab fa-php"></i> PHP</div>
+                <div class="marquee-item"><i class="fab fa-laravel"></i> Laravel</div>
+                <div class="marquee-item"><i class="fab fa-git-alt"></i> Git</div>
+                <div class="marquee-item"><i class="fas fa-database"></i> MySQL</div>
+                <div class="marquee-item"><i class="fab fa-linux"></i> Linux</div>
+                <div class="marquee-item"><i class="fab fa-figma"></i> Figma</div>
+                <div class="marquee-item"><i class="fab fa-docker"></i> Docker</div>
+                <div class="marquee-item"><i class="fab fa-aws"></i> AWS</div>
+                <div class="marquee-item"><i class="fas fa-fire"></i> Firebase</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">
+                <span class="section-number">01.</span> About Me
+                <span class="section-line"></span>
+            </h2>
+            <div class="about-grid">
+                <div class="about-image-col animate-on-scroll">
+                    <div class="about-image-wrapper tilt-card">
+                        <img src="images/alvin_wide.jpg" alt="Alvin John Dulnuan" class="about-image">
+                        <div class="about-image-border"></div>
+                        <div class="about-exp-badge glass-card">
+                            <span class="exp-number">3+</span>
+                            <span class="exp-text">Years of<br>Coding</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text-col">
+                    <div class="about-text animate-on-scroll">
+                        <h3 class="about-heading">
+                            Turning <span class="gradient-text">Coffee Into Code</span> Since Day One
+                        </h3>
+                        <p>
+                            I'm <strong>Alvin John Dulnuan</strong> — a relentless software engineer from the highlands of 
+                            <strong>Aritao, Nueva Vizcaya, Philippines</strong>. Currently pursuing my BS in Information Technology 
+                            while simultaneously building products that push boundaries.
+                        </p>
+                        <p>
+                            My philosophy is simple: <em>ship fast, iterate faster, never stop learning</em>. 
+                            From architecting full-stack web applications to configuring enterprise-grade server environments, 
+                            I thrive at the intersection of creativity and technical precision.
+                        </p>
+                        <p>
+                            When I'm not engineering solutions, you'll find me exploring new frameworks, 
+                            contributing to open-source, or dominating hackathons. My endgame? Building software 
+                            that billions of people use daily.
+                        </p>
+                    </div>
+                    <div class="about-details animate-on-scroll">
+                        <div class="detail-item">
+                            <span class="detail-label">Name</span>
+                            <span class="detail-value">Alvin John Dulnuan</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Email</span>
+                            <span class="detail-value">ajdulnuan09@gmail.com</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Phone</span>
+                            <span class="detail-value">+63 917 845 2396</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Location</span>
+                            <span class="detail-value">Aritao, Nueva Vizcaya</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Education</span>
+                            <span class="detail-value">BSIT — Information Technology</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Status</span>
+                            <span class="detail-value"><span class="status-dot"></span> Available for work</span>
+                        </div>
+                    </div>
+                    <div class="about-stats animate-on-scroll">
+                        <div class="stat-item">
+                            <span class="stat-number counter" data-target="10">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number counter" data-target="12">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number counter" data-target="500">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Hours Coded</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number counter" data-target="15">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section class="section services" id="services">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">
+                <span class="section-number">02.</span> What I Do
+                <span class="section-line"></span>
+            </h2>
+            <p class="section-subtitle animate-on-scroll">Specialized services tailored to bring your digital vision to life</p>
+            <div class="services-grid">
+                <div class="service-card glass-card tilt-card animate-on-scroll">
+                    <div class="service-number">01</div>
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Full-stack web applications built with modern technologies. From responsive frontends to robust backend APIs — pixel-perfect and performant.</p>
+                    <div class="service-tags">
+                        <span>React</span><span>Node.js</span><span>PHP</span><span>Laravel</span>
+                    </div>
+                </div>
+                <div class="service-card glass-card tilt-card animate-on-scroll">
+                    <div class="service-number">02</div>
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobile Development</h3>
+                    <p>Cross-platform mobile applications that deliver native-like performance. Beautiful interfaces paired with smooth user experiences.</p>
+                    <div class="service-tags">
+                        <span>React Native</span><span>Flutter</span><span>Java</span>
+                    </div>
+                </div>
+                <div class="service-card glass-card tilt-card animate-on-scroll">
+                    <div class="service-number">03</div>
+                    <div class="service-icon"><i class="fas fa-server"></i></div>
+                    <h3>System Administration</h3>
+                    <p>Server setup, configuration, and maintenance. Apache, XAMPP, Linux environments — keeping your infrastructure rock-solid and secure.</p>
+                    <div class="service-tags">
+                        <span>Linux</span><span>Apache</span><span>XAMPP</span><span>Docker</span>
+                    </div>
+                </div>
+                <div class="service-card glass-card tilt-card animate-on-scroll">
+                    <div class="service-number">04</div>
+                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>UI/UX Design</h3>
+                    <p>User-centered design that converts. Wireframes, prototypes, and polished interfaces that make your product stand out from the competition.</p>
+                    <div class="service-tags">
+                        <span>Figma</span><span>Adobe XD</span><span>CSS3</span>
+                    </div>
+                </div>
+                <div class="service-card glass-card tilt-card animate-on-scroll">
+                    <div class="service-number">05</div>
+                    <div class="service-icon"><i class="fas fa-database"></i></div>
+                    <h3>Database Engineering</h3>
+                    <p>Efficient database architecture and optimization. From schema design to complex queries — ensuring data integrity and blazing-fast performance.</p>
+                    <div class="service-tags">
+                        <span>MySQL</span><span>PostgreSQL</span><span>MongoDB</span><span>Firebase</span>
+                    </div>
+                </div>
+                <div class="service-card glass-card tilt-card animate-on-scroll">
+                    <div class="service-number">06</div>
+                    <div class="service-icon"><i class="fas fa-robot"></i></div>
+                    <h3>AI Integration</h3>
+                    <p>Implementing AI-powered features — chatbots, recommendation engines, and intelligent automation that make your product smarter.</p>
+                    <div class="service-tags">
+                        <span>Python</span><span>TensorFlow</span><span>OpenAI</span><span>NLP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">
+                <span class="section-number">03.</span> Skills & Arsenal
+                <span class="section-line"></span>
+            </h2>
+            <div class="skills-showcase">
+                <!-- Circular Progress Skills -->
+                <div class="skills-circles animate-on-scroll">
+                    <div class="skill-circle-item">
+                        <div class="skill-circle" data-progress="92">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+                                <circle class="skill-circle-fill" cx="60" cy="60" r="54"></circle>
+                            </svg>
+                            <div class="skill-circle-text">
+                                <span class="skill-circle-percent">92%</span>
+                                <span class="skill-circle-name">HTML/CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-circle-item">
+                        <div class="skill-circle" data-progress="85">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+                                <circle class="skill-circle-fill" cx="60" cy="60" r="54"></circle>
+                            </svg>
+                            <div class="skill-circle-text">
+                                <span class="skill-circle-percent">85%</span>
+                                <span class="skill-circle-name">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-circle-item">
+                        <div class="skill-circle" data-progress="80">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+                                <circle class="skill-circle-fill" cx="60" cy="60" r="54"></circle>
+                            </svg>
+                            <div class="skill-circle-text">
+                                <span class="skill-circle-percent">80%</span>
+                                <span class="skill-circle-name">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-circle-item">
+                        <div class="skill-circle" data-progress="78">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+                                <circle class="skill-circle-fill" cx="60" cy="60" r="54"></circle>
+                            </svg>
+                            <div class="skill-circle-text">
+                                <span class="skill-circle-percent">78%</span>
+                                <span class="skill-circle-name">React</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-circle-item">
+                        <div class="skill-circle" data-progress="82">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+                                <circle class="skill-circle-fill" cx="60" cy="60" r="54"></circle>
+                            </svg>
+                            <div class="skill-circle-text">
+                                <span class="skill-circle-percent">82%</span>
+                                <span class="skill-circle-name">PHP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-circle-item">
+                        <div class="skill-circle" data-progress="75">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+                                <circle class="skill-circle-fill" cx="60" cy="60" r="54"></circle>
+                            </svg>
+                            <div class="skill-circle-text">
+                                <span class="skill-circle-percent">75%</span>
+                                <span class="skill-circle-name">Java</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Bars -->
+                <div class="skills-bars animate-on-scroll">
+                    <h3 class="skills-category-title"><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Git & GitHub</span><span class="skill-percent">88%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">MySQL / Database</span><span class="skill-percent">80%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Linux / CLI</span><span class="skill-percent">75%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">XAMPP / Apache / Nginx</span><span class="skill-percent">85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Docker & DevOps</span><span class="skill-percent">65%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="65"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Figma / UI Design</span><span class="skill-percent">70%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="70"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">
+                <span class="section-number">04.</span> Featured Projects
+                <span class="section-line"></span>
+            </h2>
+            <p class="section-subtitle animate-on-scroll">A showcase of my finest work — from concept to deployment</p>
+
+            <div class="project-filters animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="system">Systems</button>
+                <button class="filter-btn" data-filter="clone">Recreations</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 — Netflix Clone -->
+                <div class="project-card glass-card animate-on-scroll" data-category="clone">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #e50914, #831010);">
+                            <i class="fas fa-film" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link magnetic-btn" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link magnetic-btn" title="Source Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-featured-tag">Featured</div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Netflix — Streaming Platform</h3>
+                        <p class="project-description">A full-scale streaming platform recreation with user authentication, dynamic content loading, trailer playback, watchlist management, and responsive design matching Netflix's UX.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">TMDb API</span><span class="tag">Firebase Auth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 — Spotify Clone -->
+                <div class="project-card glass-card animate-on-scroll" data-category="clone">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #1DB954, #0d5c2a);">
+                            <i class="fas fa-music" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link magnetic-btn" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link magnetic-btn" title="Source Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Spotify — Music Streaming App</h3>
+                        <p class="project-description">A music streaming platform with playlist creation, search functionality, audio playback controls, artist pages, and Spotify Web API integration for real music data.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span><span class="tag">Spotify API</span><span class="tag">CSS3</span><span class="tag">Web Audio</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 — Tesla Website -->
+                <div class="project-card glass-card animate-on-scroll" data-category="clone">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #cc0000, #1a1a1a);">
+                            <i class="fas fa-car" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link magnetic-btn" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link magnetic-btn" title="Source Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Tesla — Automotive Website</h3>
+                        <p class="project-description">A sleek recreation of Tesla's website featuring full-page scroll sections, smooth animations, vehicle configurator, and immersive visual storytelling with parallax effects.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span><span class="tag">Styled Components</span><span class="tag">Framer Motion</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 — E-Commerce -->
+                <div class="project-card glass-card animate-on-scroll" data-category="web">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #ff9a00, #ff6d00);">
+                            <i class="fas fa-shopping-cart" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link magnetic-btn" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link magnetic-btn" title="Source Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-featured-tag">Featured</div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">ShopHub — E-Commerce Platform</h3>
+                        <p class="project-description">Complete online marketplace with product catalog, cart system, checkout flow, payment gateway integration, admin dashboard, inventory management, and order tracking.</p>
+                        <div class="project-tags">
+                            <span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Stripe</span><span class="tag">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 — Management System -->
+                <div class="project-card glass-card animate-on-scroll" data-category="system">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                            <i class="fas fa-users-cog" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link magnetic-btn" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link magnetic-btn" title="Source Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">EduTrack — Student Management</h3>
+                        <p class="project-description">Comprehensive student information system with enrollment management, grade tracking, attendance monitoring, analytics dashboard, and automated report generation.</p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">MySQL</span><span class="tag">Chart.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 — AI Chatbot -->
+                <div class="project-card glass-card animate-on-scroll" data-category="web">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #00d4ff, #7c3aed);">
+                            <i class="fas fa-robot" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link magnetic-btn" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link magnetic-btn" title="Source Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">NexaBot — AI Chatbot Platform</h3>
+                        <p class="project-description">An intelligent chatbot platform powered by NLP and machine learning. Features natural language understanding, context retention, multi-language support, and sentiment analysis.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">Flask</span><span class="tag">NLP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 — Task Manager -->
+                <div class="project-card glass-card animate-on-scroll" data-category="web">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                            <i class="fas fa-tasks" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link magnetic-btn" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link magnetic-btn" title="Source Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">FlowBoard — Project Manager</h3>
+                        <p class="project-description">A Trello-inspired project management tool with drag-and-drop boards, task assignments, deadline tracking, team collaboration, and real-time notifications.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Socket.io</span><span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 — Weather App -->
+                <div class="project-card glass-card animate-on-scroll" data-category="mobile">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                            <i class="fas fa-cloud-sun" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link magnetic-btn" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link magnetic-btn" title="Source Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">SkyPulse — Weather Dashboard</h3>
+                        <p class="project-description">A beautiful weather application with real-time data, 7-day forecasts, interactive maps, location-based alerts, and stunning animated weather visualizations.</p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span><span class="tag">OpenWeather API</span><span class="tag">Chart.js</span><span class="tag">Mapbox</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS SECTION ==================== -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">
+                <span class="section-number">05.</span> Client Reviews
+                <span class="section-line"></span>
+            </h2>
+            <div class="testimonial-carousel animate-on-scroll">
+                <div class="testimonial-track">
+                    <div class="testimonial-card glass-card active">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Alvin delivered an exceptional e-commerce platform that exceeded our expectations. His attention to detail and ability to translate our vision into a functional product was remarkable. Truly a 10/10 experience."</p>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">MR</div>
+                            <div class="testimonial-info">
+                                <h4>Marco Reyes</h4>
+                                <span>CEO, TechVentures PH</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Working with Alvin was a game-changer for our startup. He built our entire management system from scratch and the results speak for themselves — 40% increase in operational efficiency. Highly recommended!"</p>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">SC</div>
+                            <div class="testimonial-info">
+                                <h4>Sarah Chen</h4>
+                                <span>Founder, EduStart Inc.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Alvin's system administration skills are top-notch. He migrated our entire infrastructure seamlessly with zero downtime. His troubleshooting speed is unmatched. The best IT professional I've worked with."</p>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JD</div>
+                            <div class="testimonial-info">
+                                <h4>James dela Cruz</h4>
+                                <span>CTO, DataPrime Solutions</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"I needed a portfolio website that would wow potential employers, and Alvin absolutely crushed it. The animations, the design, the performance — everything is world-class. Can't recommend him enough!"</p>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">AL</div>
+                            <div class="testimonial-info">
+                                <h4>Angela Lim</h4>
+                                <span>UX Designer, Creative Labs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <button class="testimonial-btn prev" id="testimonialPrev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-dots" id="testimonialDots"></div>
+                    <button class="testimonial-btn next" id="testimonialNext"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EDUCATION SECTION ==================== -->
+    <section class="section education" id="education">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">
+                <span class="section-number">06.</span> Education & Journey
+                <span class="section-line"></span>
+            </h2>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item left animate-on-scroll">
+                    <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content glass-card tilt-card">
+                        <div class="timeline-header">
+                            <span class="timeline-date"><i class="fas fa-calendar-alt"></i> 2023 — Present</span>
+                            <span class="timeline-badge current">Current</span>
+                        </div>
+                        <h3>Bachelor of Science in Information Technology</h3>
+                        <p class="timeline-institution"><i class="fas fa-university"></i> College of Accountancy, Management, Computing and Information Sciences</p>
+                        <p class="timeline-description">Specializing in software development, system administration, web technologies, and database management. Consistently excelling in technical subjects while building real-world projects.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">System Admin</span><span class="tag">Web Dev</span><span class="tag">DBMS</span><span class="tag">Software Engineering</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item right animate-on-scroll">
+                    <div class="timeline-dot"><i class="fas fa-certificate"></i></div>
+                    <div class="timeline-content glass-card tilt-card">
+                        <div class="timeline-header">
+                            <span class="timeline-date"><i class="fas fa-calendar-alt"></i> 2024</span>
+                            <span class="timeline-badge cert">Certification</span>
+                        </div>
+                        <h3>Full-Stack Web Development</h3>
+                        <p class="timeline-institution"><i class="fas fa-laptop-code"></i> Professional Online Training</p>
+                        <p class="timeline-description">Completed intensive training covering React, Node.js, Express, MongoDB, REST APIs, authentication, deployment, and modern development practices.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">REST API</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item left animate-on-scroll">
+                    <div class="timeline-dot"><i class="fas fa-award"></i></div>
+                    <div class="timeline-content glass-card tilt-card">
+                        <div class="timeline-header">
+                            <span class="timeline-date"><i class="fas fa-calendar-alt"></i> 2025</span>
+                            <span class="timeline-badge cert">Certification</span>
+                        </div>
+                        <h3>System Administration & Cloud Computing</h3>
+                        <p class="timeline-institution"><i class="fas fa-cloud"></i> Cloud Academy</p>
+                        <p class="timeline-description">Advanced training in Linux server management, Docker containers, CI/CD pipelines, AWS cloud services, and enterprise-grade infrastructure deployment.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Linux</span><span class="tag">Docker</span><span class="tag">AWS</span><span class="tag">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item right animate-on-scroll">
+                    <div class="timeline-dot"><i class="fas fa-infinity"></i></div>
+                    <div class="timeline-content glass-card tilt-card">
+                        <div class="timeline-header">
+                            <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Ongoing</span>
+                            <span class="timeline-badge growth">Never Stop</span>
+                        </div>
+                        <h3>Continuous Learning & Open Source</h3>
+                        <p class="timeline-institution"><i class="fas fa-rocket"></i> Self-Directed Growth</p>
+                        <p class="timeline-description">Constantly evolving through personal projects, open-source contributions, competitive programming, tech blogs, and staying ahead of industry trends. The grind never stops.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Open Source</span><span class="tag">Hackathons</span><span class="tag">AI/ML</span><span class="tag">Leadership</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">
+                <span class="section-number">07.</span> Let's Connect
+                <span class="section-line"></span>
+            </h2>
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll">
+                    <h3 class="contact-heading">Got a Project? <span class="gradient-text">Let's Talk.</span></h3>
+                    <p class="contact-text">I'm always excited to work on new challenges. Whether you need a website, a system built, or just want to chat about tech — my inbox is always open.</p>
+                    <div class="contact-details">
+                        <div class="contact-item glass-card">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div><h4>Email</h4><p>ajdulnuan09@gmail.com</p></div>
+                        </div>
+                        <div class="contact-item glass-card">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div><h4>Phone</h4><p>+63 917 845 2396</p></div>
+                        </div>
+                        <div class="contact-item glass-card">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div><h4>Location</h4><p>Aritao, Nueva Vizcaya, Philippines</p></div>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://github.com/" target="_blank" class="social-link-lg magnetic-btn"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/" target="_blank" class="social-link-lg magnetic-btn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://facebook.com/" target="_blank" class="social-link-lg magnetic-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/" target="_blank" class="social-link-lg magnetic-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/" target="_blank" class="social-link-lg magnetic-btn"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper animate-on-scroll">
+                    <form class="contact-form glass-card" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder=" " required>
+                                <label for="name">Your Name</label>
+                                <span class="form-line"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder=" " required>
+                                <label for="email">Your Email</label>
+                                <span class="form-line"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder=" " required>
+                            <label for="subject">Subject</label>
+                            <span class="form-line"></span>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+                            <label for="message">Your Message</label>
+                            <span class="form-line"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full magnetic-btn">
+                            <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+                            <span class="btn-loading"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-bracket">&lt;</span>ALVEIN<span class="logo-bracket"> /&gt;</span>
+                    </div>
+                    <p>Building exceptional digital experiences from Aritao, Nueva Vizcaya to the world. Let's create something extraordinary together.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> ajdulnuan09@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +63 917 845 2396</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Aritao, Nueva Vizcaya</p>
+                </div>
+                <div class="footer-social-col">
+                    <h4>Follow Me</h4>
+                    <div class="footer-social">
+                        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:ajdulnuan09@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2026</span> <span class="gradient-text">Alvin John Dulnuan</span>. All rights reserved.</p>
+                <p class="footer-tagline">Crafted with <i class="fas fa-heart" style="color: #ff006e;"></i> and lots of ☕ | BSIT — System Administration & Maintenance</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button class="back-to-top" id="backToTop" title="Back to Top">
+        <svg class="back-to-top-svg" viewBox="0 0 46 46">
+            <circle class="back-to-top-circle" cx="23" cy="23" r="21" fill="none" stroke-width="2"></circle>
+        </svg>
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ==================== AI CHATBOT ==================== -->
+    <div class="chatbot-widget">
+        <button class="chatbot-toggle" id="chatbotToggle" title="Chat with AJ's AI Assistant">
+            <i class="fas fa-robot chatbot-icon-open"></i>
+            <i class="fas fa-times chatbot-icon-close"></i>
+            <span class="chatbot-pulse"></span>
+        </button>
+        <div class="chatbot-window glass-card" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar"><i class="fas fa-robot"></i></div>
+                    <div>
+                        <h4>AJ's AI Assistant</h4>
+                        <span class="chatbot-status"><span class="status-dot"></span> Online</span>
+                    </div>
+                </div>
+                <button class="chatbot-close" id="chatbotClose"><i class="fas fa-minus"></i></button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chat-message bot">
+                    <div class="chat-bubble">Hey there! 👋 I'm AJ's AI assistant. Ask me anything about Alvin's skills, projects, or how to get in touch!</div>
+                </div>
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Type your message..." autocomplete="off">
+                <button class="chatbot-send" id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
